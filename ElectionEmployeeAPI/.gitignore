@@ -1,0 +1,19 @@
+## .NET Core
+bin/
+obj/
+*.user
+*.suo
+.vs/
+
+## Secrets — DB password yahan hai, GitHub pe nahi jaana chahiye
+appsettings.json
+appsettings.Development.json
+appsettings.Production.json
+
+## Logs
+*.log
+logs/
+
+## OS
+.DS_Store
+Thumbs.db
