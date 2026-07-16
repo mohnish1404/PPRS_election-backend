@@ -1,9 +1,9 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /app
-COPY ElectionEmployeeAPI/*.csproj ./ElectionEmployeeAPI/
-RUN dotnet restore ./ElectionEmployeeAPI/ElectionEmployeeAPI.csproj
+COPY *.csproj ./
+RUN dotnet restore
 COPY . .
-RUN dotnet publish ./ElectionEmployeeAPI/ElectionEmployeeAPI.csproj -c Release -o /out
+RUN dotnet publish -c Release -o /out
 
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
