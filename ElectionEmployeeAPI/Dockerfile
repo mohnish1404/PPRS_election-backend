@@ -2,14 +2,14 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /app
 
-# Copy solution and project files
-COPY ElectionEmployeeAPI/ElectionEmployeeAPI/*.csproj ./ElectionEmployeeAPI/
+# Copy project file
+COPY ElectionEmployeeAPI/*.csproj ./ElectionEmployeeAPI/
 
 # Restore dependencies
 RUN dotnet restore ./ElectionEmployeeAPI/ElectionEmployeeAPI.csproj
 
 # Copy all source code
-COPY ElectionEmployeeAPI/. ./ElectionEmployeeAPI/
+COPY . .
 
 # Build and publish
 RUN dotnet publish ./ElectionEmployeeAPI/ElectionEmployeeAPI.csproj -c Release -o /out
